@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import InputBar from "components/InputBar";
 import { useUser } from "contexts/UserContext";
-import dayjs from "dayjs";
 import { mindumpApi } from "api/mindumpApi";
 import { getLocalDateISO } from "functions/date";
 
@@ -29,7 +27,7 @@ export default function NewEntry() {
       await mindumpApi.sendMessage({
         content: text,
         date: getLocalDateISO(),
-        timezone: user.timezone ?? null,
+        timezone: user.timezone || "UTC",
         user_uuid: user.user_uuid
       });
       navigate("/journal");

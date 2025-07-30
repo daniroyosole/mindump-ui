@@ -5,7 +5,8 @@ import { useUser } from "contexts/UserContext";
 import { mindumpApi } from "api/mindumpApi";
 import { getEffectiveEntryDate, getLocalDateISO } from "functions/date";
 
-type Summary = {
+export type Summary = {
+  haiku: string;
   date: string; // "YYYY-MM-DD"
   percent: number; // 0 to 1
 };
@@ -17,7 +18,7 @@ export default function Calendar({
   selectedDate,
 }: {
   summaries: Summary[];
-  setSummaries: (summary: Summary) => void;
+  setSummaries: (summary: Summary[]) => void;
   onSelectDay: (iso: string) => void;
   selectedDate: string;
 }) {

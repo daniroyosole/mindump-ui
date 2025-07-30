@@ -1,7 +1,7 @@
 import axios from "axios";
 import type { User } from "contexts/UserContext";
 
-const API_BASE = "http://localhost:4000"; // Puedes hacer esto dinámico si quieres usar .env
+const API_BASE = import.meta.env.VERCEL_MINDUMP_API_BASE;
 // API Methods
 export const mindumpApi = {
   // Autenticación con Google
@@ -44,15 +44,18 @@ export const mindumpApi = {
     content,
     date,
     user_uuid,
+    timezone,
   }: {
     content: string;
     date?: string;
     user_uuid: string;
+    timezone: string;
   }) {
     const { data } = await axios.post(`${API_BASE}/messages`, {
       content,
       date,
       user_uuid,
+      timezone
     });
     return data;
   },
