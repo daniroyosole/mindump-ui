@@ -1,11 +1,11 @@
 export function saveUserSession(user_uuid: string) {
-  localStorage.setItem("user_uuid", user_uuid);
+  localStorage.setItem("mindump-token", user_uuid);
 }
 
 export function getUserSession(): string | null {
-  return localStorage.getItem("user_uuid");
+  return localStorage.getItem("mindump-token");
 }
 
 export function clearUserSession() {
-  localStorage.removeItem("user_uuid");
+  localStorage.removeItem("mindump-token");
 }

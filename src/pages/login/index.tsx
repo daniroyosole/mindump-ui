@@ -1,22 +1,20 @@
 // src/pages/Login.tsx
 import { GoogleLogin } from "@react-oauth/google";
 import { saveUserSession } from "../../functions/auth";
-import { useNavigate } from "react-router-dom";
 import { useUser } from "contexts/UserContext";
 import { mindumpApi } from "api/mindumpApi";
 
 export default function Login({ onLogin }: { onLogin: () => void }) {
-  const navigate = useNavigate();
   const { updateUser } = useUser()
 
   const handleLoginSuccess = async (credentialResponse: any) => {
     try {
       const data = await mindumpApi.authWithGoogle(credentialResponse.credential)
-
-      saveUserSession(data.user_uuid);
-      updateUser({ name: data.name, user_uuid: data.user_uuid})
-      onLogin();
-      navigate("/journal");
+      if (data && credentialResponse) {
+        saveUserSession(credentialResponse.credential);
+        updateUser({ name: data.name, token: credentialResponse.credential })
+        onLogin();
+      }
     } catch (err) {
       console.error("Error verifying token:", err);
     }

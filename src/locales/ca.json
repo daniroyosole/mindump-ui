@@ -1,0 +1,131 @@
+{
+  "common": {
+    "confirm": "Confirma",
+    "cancel": "Cancel·la",
+    "close": "Tanca"
+  },
+  "dashboard": {
+    "loadingText": "Carregant resum setmanal...",
+    "title": "Resum setmanal",
+    "sections": {
+      "weekEvolution": {
+        "title": "Evolució de la setmana"
+      },
+      "topKeywords": {
+        "title": "Paraules clau"
+      },
+      "issuesToWork": {
+        "title": "Temes a treballar",
+        "emptyText": "Res a treballar ara mateix. Bona senyal!"
+      }
+    },
+    "buttons": {
+      "showFullSummary": "Veure resum complet",
+      "close": "Tanca"
+    },
+    "emptyState": {
+      "title": "El teu resum encara està en blanc ✨",
+      "subtitle": "Escriu cada dia i veuràs com la teva setmana pren forma 📖"
+    }
+  },
+  "diary": {
+    "addEvent": "Nova entrada",
+    "dailySummary": "Resum diari",
+    "remainingHours": {
+      "title": "encara tens <strong>{{hours}}</strong> per escriure avui",
+      "oneHour": "1 hora",
+      "lessThanOneHour": "menys d'una hora",
+      "hours": "hores"
+    },
+    "messagesTitle": "El teu dia fins ara",
+    "noContentTitle": "Escriu aquí com ha anat el dia i què has sentit.",
+    "summary": {
+      "title": "Com t'has sentit"
+    }
+  },
+  "form": {
+    "language": {
+      "title": "Tria el teu idioma",
+      "description": "Això ens ajuda a parlar amb tu en l'idioma que prefereixis. Pots canviar-ho més tard.",
+      "options": {
+        "ca": "Català",
+        "es": "Espanyol",
+        "en": "Anglès"
+      }
+    },
+    "age": {
+      "title": "Quants anys tens?",
+      "description": "🎂 Aquesta app és per a majors de 18. Si ets més jove, millor espera una mica abans d'utilitzar-la 🙂",
+      "placeholder": "Ex. 28"
+    },
+    "timezone": {
+      "title": "En quina zona horària estàs?",
+      "description": "Això determina a quina hora es tanca el dia en el teu diari. No es podrà canviar després."
+    },
+    "job": {
+      "title": "A què et dediques?",
+      "description": "Estudiant, dissenyador, aturat, ninja... el que diguis. 🙃",
+      "placeholder": "Ex. Desenvolupador front, estudiant de biologia..."
+    },
+    "hobbies": {
+      "title": "Què t'agrada fer?",
+      "description": "Pot ser qualsevol cosa: llegir, estar amb amics, mirar al sostre...",
+      "placeholder": "Ex. Cuinar, llegir, viatjar..."
+    },
+    "description": {
+      "title": "Descriu-te breument",
+      "description": "Sense judicis, només volem conèixer-te. Sigues tu mateix. 🌱",
+      "placeholder": "Sóc una persona tranquil·la, m'agrada el silenci i els gats..."
+    },
+    "app_usage": {
+      "title": "Per a què faràs servir aquesta app?",
+      "description": "Pots triar diverses opcions:",
+      "options": {
+        "diary": "Com a diari",
+        "selfDiscovery": "Autoconeixement",
+        "therapySupport": "Suport a la teràpia",
+        "casual": "De forma casual",
+        "think": "Per reflexionar",
+        "awful": "Estic fatal..."
+      }
+    },
+    "buttons": {
+      "back": "Enrere",
+      "next": "Següent",
+      "submit": "Guardar i començar"
+    }
+  },
+  "footer": {
+    "diary": "Diari",
+    "dashboard": "Resum",
+    "profile": "Perfil"
+  },
+  "newEntry": {
+    "placeholder": "Comparteix el que et passa pel cap",
+    "moodPlaceholder": "Què t'ha fet sentir {{mood}} avui?",
+    "saving": "Desant...",
+    "title": "Com ha anat el teu dia?",
+    "moods": {
+      "ecstatic": "Genial",
+      "happy": "Content/a",
+      "grateful": "Agraït/ida",
+      "calm": "Calmat/ada",
+      "thoughtful": "Pensatiu/iva",
+      "sad": "Trist/a",
+      "frustrated": "Frustrat/ada",
+      "overwhelmed": "Saturat/ada",
+      "nostalgic": "Nostàlgic/ca",
+      "confident": "Segur/a"
+    }
+  },
+  "profile": {
+    "title": "Perfil",
+    "changeLanguage": "Canviar idioma",
+    "aboutApp": {
+      "title": "Sobre l'app",
+      "content": "Aquesta app és un diari personal on pots expressar el que sents al llarg del dia.\nA partir de les teves paraules, es generen resums i visualitzacions per ajudar-te a entendre millor com ha estat la teva setmana o el teu mes.\n<br /><br />\nCada nit, les teves entrades al diari s’analitzen i s’estructuren per donar context i generar-te un millor perfil.\nA més, es tanca l’entrada del dia anterior i podràs veure la valoració del dia, el haiku, i s’actualitzarà el resum de la setmana.\n<br /><br />\n<strong>No és un psicòleg ni una font de consells terapèutics.</strong>\nNo substitueix l’ajuda professional.\n<br /><br />\nLa teva informació és privada i només tu pots decidir què en fas."
+    },
+    "logout": "Tanca sessió"
+  }
+}
+  

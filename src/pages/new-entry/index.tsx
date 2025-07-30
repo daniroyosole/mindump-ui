@@ -3,34 +3,30 @@ import { useNavigate } from "react-router-dom";
 import InputBar from "components/InputBar";
 import { useUser } from "contexts/UserContext";
 import { mindumpApi } from "api/mindumpApi";
-import { getLocalDateISO } from "functions/date";
-
-const phrases = [
-  "Hoy también mereces ser escuchado.",
-  "Vacía lo que llevas dentro.",
-  "No hay juicio, solo espacio.",
-  "Tu voz es importante.",
-  "Escribe como si nadie fuera a leerlo."
-];
-const phrase = phrases[Math.floor(Math.random() * phrases.length)];
+import { getEffectiveEntryDate } from "functions/date";
+import { useTranslation } from "react-i18next";
+import { ArrowLeft } from "lucide-react";
+import { MOODS } from "constants/message";
 
 export default function NewEntry() {
-  const { user } = useUser()
-  const [loading, setLoading] = useState<boolean>(false);
+  const { user } = useUser();
+  const [loading, setLoading] = useState(false);
+  const [selectedMood, setSelectedMood] = useState<string | null>(null);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleSave = async (text: string) => {
     if (!text.trim() || !user.user_uuid) return;
     setLoading(true);
-    console.log(user)
+    const finalText = selectedMood ? `${t(`newEntry.moods.${selectedMood}`)}: ${text.trim()}` : text.trim()
     try {
       await mindumpApi.sendMessage({
-        content: text,
-        date: getLocalDateISO(),
+        content: finalText,
+        date: getEffectiveEntryDate(),
         timezone: user.timezone || "UTC",
-        user_uuid: user.user_uuid
+        user_uuid: user.user_uuid,
       });
-      navigate("/journal");
+      navigate("/diary");
     } catch (error) {
       console.error("Error saving entry", error);
     } finally {
@@ -38,22 +34,58 @@ export default function NewEntry() {
     }
   };
 
+  const toggleSelectedMood = (mood: string) => {
+    if (selectedMood === mood) setSelectedMood(null)
+    else setSelectedMood(mood)
+  }
+
   return (
-    <div className="flex flex-col h-screen bg-white">
+    <div className="space-y-4">
+      <div className="flex flex-col h-screen px-4 pt-6 pb-[24px] relative bg-white">
+        {/* Botón atrás */}
+        <button
+          onClick={() => navigate(-1)}
+          className="absolute top-4 left-4 text-gray-500 hover:text-gray-800 transition"
+        >
+          <ArrowLeft size={24} />
+        </button>
 
-      <div className="flex-1 flex items-center justify-center px-6 text-center">
-        {loading ? (
-          <div className="animate-pulse text-gray-400">Guardando...</div>
-        ) : (
-          <div className="flex-1 flex flex-col items-center justify-center px-6 text-center">
-            <h1 className="text-xl font-semibold mb-4 text-gray-800">¿Cómo fue tu día?</h1>
-            <p className="text-lg italic text-gray-500">{phrase}</p>
+        {/* Encabezado */}
+        <div className="pt-8 mb-2 shrink-0">
+          <h1 className="text-lg font-light text-black">{t("newEntry.title")}</h1>
+        </div>
+
+        {/* Selector de emociones */}
+        <div className="mb-2 shrink-0">
+          <div className="flex flex-wrap gap-2">
+            {MOODS.map((mood) => (
+              <button
+                key={mood.key}
+                onClick={() => toggleSelectedMood(mood.key)}
+                className={`px-3 py-1 rounded-full border text-sm transition ${
+                  selectedMood === mood.key
+                    ? "bg-blue-100 border-blue-400 text-blue-800"
+                    : "bg-gray-50 border-gray-200 text-gray-600"
+                }`}
+              >
+                {mood.emoji} {t(`newEntry.moods.${mood.key}`)}
+              </button>
+            ))}
           </div>
-        )}
-      </div>
+        </div>
 
-      <div className="w-full p-4 border-t">
-        <InputBar onSend={handleSave} disabled={loading} />
+        {/* Input que ocupa el resto de la pantalla */}
+        <div className="flex-1">
+          <InputBar
+            onSend={handleSave}
+            disabled={loading}
+            placeholder={
+              selectedMood
+                ? t("newEntry.moodPlaceholder", { mood: t(`newEntry.moods.${selectedMood}`).toLowerCase() })
+                : t("newEntry.placeholder")
+            }
+          />
+        </div>
       </div>
     </div>
   );

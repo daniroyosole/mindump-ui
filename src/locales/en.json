@@ -1,0 +1,130 @@
+{
+  "common": {
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "close": "Close"
+  },
+  "dashboard": {
+    "loadingText": "Loading weekly summary...",
+    "title": "Weekly summary",
+    "sections": {
+      "weekEvolution": {
+        "title": "Week's progress"
+      },
+      "topKeywords": {
+        "title": "Top keywords"
+      },
+      "issuesToWork": {
+        "title": "Topics to work on",
+        "emptyText": "Nothing to work on for now. Good sign!"
+      }
+    },
+    "buttons": {
+      "showFullSummary": "See full summary",
+      "close": "Close"
+    },
+    "emptyState": {
+      "title": "Your summary is still empty ✨",
+      "subtitle": "Write something every day and watch your week take shape 📖"
+    }
+  },
+  "diary": {
+    "addEvent": "New entry",
+    "dailySummary": "Daily summary",
+    "remainingHours": {
+      "title": "you still have <strong>{{hours}}</strong> to write today",
+      "oneHour": "1 hour",
+      "lessThanOneHour": "less than an hour",
+      "hours": "hours"
+    },
+    "messagesTitle": "Your day so far",
+    "noContentTitle": "Write here how your day went and what you felt.",
+    "summary": {
+      "title": "How you felt"
+    }
+  },
+  "form": {
+    "language": {
+      "title": "Choose your language",
+      "description": "This helps us talk to you in your preferred language. You can change it later.",
+      "options": {
+        "ca": "Catalan",
+        "es": "Spanish",
+        "en": "English"
+      }
+    },
+    "age": {
+      "title": "How old are you?",
+      "description": "🎂 This app is for users over 18. If you're younger, better wait a bit before using it 🙂",
+      "placeholder": "Ex. 28"
+    },
+    "timezone": {
+      "title": "What time zone are you in?",
+      "description": "This determines when your diary day closes. It can't be changed later."
+    },
+    "job": {
+      "title": "What do you do?",
+      "description": "Student, designer, unemployed, ninja... whatever you say. 🙃",
+      "placeholder": "Ex. Frontend developer, biology student..."
+    },
+    "hobbies": {
+      "title": "What do you like to do?",
+      "description": "It can be anything: reading, hanging out with friends, staring at the ceiling...",
+      "placeholder": "Ex. Cooking, reading, traveling..."
+    },
+    "description": {
+      "title": "Describe yourself briefly",
+      "description": "No judgments, we just want to get to know you. Be yourself. 🌱",
+      "placeholder": "I'm a calm person, I like silence and cats..."
+    },
+    "app_usage": {
+      "title": "What will you use this app for?",
+      "description": "You can choose multiple options:",
+      "options": {
+        "diary": "As a diary",
+        "selfDiscovery": "Self-discovery",
+        "therapySupport": "Therapy support",
+        "casual": "Casually",
+        "think": "For reflection",
+        "awful": "I feel awful..."
+      }
+    },
+    "buttons": {
+      "back": "Back",
+      "next": "Next",
+      "submit": "Save and start"
+    }
+  },
+  "footer": {
+    "diary": "Diary",
+    "dashboard": "Summary",
+    "profile": "Profile"
+  },
+  "newEntry": {
+    "placeholder": "Share what's on your mind",
+    "moodPlaceholder": "What made you feel {{mood}} today?",
+    "saving": "Saving...",
+    "title": "How was your day?",
+    "moods": {
+      "ecstatic": "Ecstatic",
+      "happy": "Happy",
+      "grateful": "Grateful",
+      "calm": "Calm",
+      "thoughtful": "Thoughtful",
+      "sad": "Sad",
+      "frustrated": "Frustrated",
+      "overwhelmed": "Overwhelmed",
+      "nostalgic": "Nostalgic",
+      "confident": "Confident"
+    }
+  },
+  "profile": {
+    "title": "Profile",
+    "changeLanguage": "Change language",
+    "aboutApp": {
+      "title": "About",
+      "content": "This app is a personal journal where you can pour out what you feel throughout the day.\nBased on your words, summaries and visualizations are generated to help you better understand how your week or month has been.\n<br /><br />\nEach night, your journal entries are analyzed and structured to provide context and create a better profile for you.\nAlso, the previous day’s entry is closed, and you will be able to see the day’s rating, the haiku, and the weekly summary will be updated.\n<br /><br />\n<strong>This is not a psychologist or a source of therapeutic advice.</strong>\nIt does not replace professional help.\n<br /><br />\nYour information is private and only you can decide what to do with it."
+    },
+    "logout": "Logout"
+  }
+}

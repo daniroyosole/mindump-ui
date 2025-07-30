@@ -1,0 +1,130 @@
+{
+  "common": {
+    "confirm": "Confirmar",
+    "cancel": "Cancelar",
+    "close": "Cerrar"
+  },
+  "dashboard": {
+    "loadingText": "Cargando resumen semanal...",
+    "title": "Resumen semanal",
+    "sections": {
+      "weekEvolution": {
+        "title": "Evolución de la semana"
+      },
+      "topKeywords": {
+        "title": "Palabras clave"
+      },
+      "issuesToWork": {
+        "title": "Temas a trabajar",
+        "emptyText": "Nada que trabajar por ahora. ¡Buena señal!"
+      }
+    },
+    "buttons": {
+      "showFullSummary": "Ver resumen completo",
+      "close": "Cerrar"
+    },
+    "emptyState": {
+      "title": "Tu resumen aún está en blanco ✨",
+      "subtitle": "Escribe algo cada día y verás cómo tu semana cobra forma 📖"
+    }
+  },  
+  "diary": {
+    "addEvent": "Nueva entrada",
+    "dailySummary": "Resumen diario",
+    "remainingHours": {
+      "title": "aún te quedan <strong>{{hours}}</strong> para escribir hoy",
+      "oneHour": "1 hora",
+      "lessThanOneHour": "menos de una hora",
+      "hours": "horas"
+    },
+    "messagesTitle": "Tu día hasta ahora",
+    "noContentTitle": "Escribe aquí cómo ha ido el día y qué has sentido.",
+    "summary": {
+      "title": "Como te has sentido"
+    }
+  },
+  "form": {
+    "language": {
+      "title": "Elige tu idioma",
+      "description": "Esto nos ayuda a hablar contigo en el idioma que prefieras. Puedes cambiarlo más tarde.",
+      "options": {
+        "ca": "Catalán",
+        "es": "Español",
+        "en": "Inglés"
+      }
+    },
+    "age": {
+      "title": "¿Cuántos años tienes?",
+      "description": "🎂 Esta app es para mayores de 18. Si eres más joven, mejor espera un poco antes de usarla 🙂",
+      "placeholder": "Ej. 28"
+    },
+    "timezone": {
+      "title": "¿En qué zona horaria estás?",
+      "description": "Esto determina a qué hora se cierra el día en tu diario. No se podrá cambiar después."
+    },
+    "job": {
+      "title": "¿A qué te dedicas?",
+      "description": "Estudiante, diseñador, parado, ninja... lo que tú digas. 🙃",
+      "placeholder": "Ej. Desarrollador front, estudiante de biología..."
+    },
+    "hobbies": {
+      "title": "¿Qué te gusta hacer?",
+      "description": "Puede ser cualquier cosa: leer, estar con amigos, mirar al techo...",
+      "placeholder": "Ej. Cocinar, leer, viajar..."
+    },
+    "description": {
+      "title": "Descríbete brevemente",
+      "description": "Sin juicios, solo queremos conocerte. Sé tú mismo. 🌱",
+      "placeholder": "Soy una persona tranquila, me gusta el silencio y los gatos..."
+    },
+    "app_usage": {
+      "title": "¿Para qué vas a usar esta app?",
+      "description": "Puedes elegir varias opciones:",
+      "options": {
+        "diary": "Como diario",
+        "selfDiscovery": "Autoconocimiento",
+        "therapySupport": "Soporte a terapia",
+        "casual": "De forma casual",
+        "think": "Para reflexionar",
+        "awful": "Estoy fatal..."
+      }
+    },
+    "buttons": {
+      "back": "Atrás",
+      "next": "Siguiente",
+      "submit": "Guardar y empezar"
+    }
+  },
+  "footer": {
+    "diary": "Diario",
+    "dashboard": "Resumen",
+    "profile": "Perfil"
+  },
+  "newEntry": {
+    "placeholder": "Comparte lo que se te pasa por la cabeza",
+    "moodPlaceholder": "¿Qué te ha hecho sentir {{mood}} hoy?",
+    "saving": "Guardando...",
+    "title": "¿Cómo fue tu día?",
+    "moods": {
+      "ecstatic": "Genial",
+      "happy": "Contento/a",
+      "grateful": "Agradecido/a",
+      "calm": "Calmado/a",
+      "thoughtful": "Pensativo/a",
+      "sad": "Triste",
+      "frustrated": "Frustrado/a",
+      "overwhelmed": "Saturado/a",
+      "nostalgic": "Nostálgico/a",
+      "confident": "Con confianza"
+    }
+  },
+  "profile": {
+    "title": "Perfil",
+    "changeLanguage": "Cambiar idioma",
+    "aboutApp": {
+      "title": "Sobre la app",
+      "content": "Esta app es un diario personal donde puedes volcar lo que sientes a lo largo del día.\nA partir de tus palabras, se generan resúmenes y visualizaciones para ayudarte a\nentender mejor cómo ha sido tu semana o tu mes.\n<br /><br />\nCada noche tus entradas al diario se analizan y se estructuran para poder dar contexto y generarte un mejor perfil.\nAdemás, se cierra la entrada del día anterior y podrás ver la valoración del día, el haiku, y se actualizará el resumen de la semana.\n<br /><br />\n<strong>No es un psicólogo ni una fuente de consejos terapéuticos.</strong>\nNo reemplaza ayuda profesional.\n<br /><br />\nTu información es privada y solo tú puedes decidir qué hacer con ella."      
+    },
+    "logout": "Cerrar sesión"
+  }
+}

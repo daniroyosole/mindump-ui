@@ -1,8 +1,16 @@
+import { useUser } from "contexts/UserContext";
 import { useEffect, useRef, useState } from "react";
+
+const langMap: Record<string, string> = {
+  ca: "ca-ES", // Catalán (España)
+  es: "es-ES", // Español (España)
+  en: "en-US", // Inglés (Estados Unidos)
+};
 
 export function VoiceInput({ onSend }: { onSend: (text: string) => void }) {
   const recognitionRef = useRef<SpeechRecognition | null>(null);
   const [listening, setListening] = useState(false);
+  const { user } = useUser()
 
   useEffect(() => {
     const SpeechRecognition =
@@ -13,7 +21,7 @@ export function VoiceInput({ onSend }: { onSend: (text: string) => void }) {
     }
 
     const recognition = new SpeechRecognition();
-    recognition.lang = "es-ES";
+    recognition.lang = langMap[user.language || "es"];
     recognition.interimResults = false;
     recognition.maxAlternatives = 1;
 
