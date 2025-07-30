@@ -14,7 +14,7 @@ export default function Login({ onLogin }: { onLogin: () => void }) {
       const data = await mindumpApi.authWithGoogle(credentialResponse.credential)
 
       saveUserSession(data.user_uuid);
-      updateUser({ name: data.name, email: data.email, user_uuid: data.user_uuid})
+      updateUser({ name: data.name, user_uuid: data.user_uuid})
       onLogin();
       navigate("/journal");
     } catch (err) {

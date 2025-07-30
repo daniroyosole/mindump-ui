@@ -25,7 +25,7 @@ export function VoiceInput({ onSend }: { onSend: (text: string) => void }) {
       onSend(transcript);
     };
 
-    recognition.onerror = (e) => {
+    recognition.onerror = (e: any) => {
       console.error("Error en el reconocimiento:", e);
     };
 

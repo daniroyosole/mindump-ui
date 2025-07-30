@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 import { sendMessage } from 'api/openai';
-import { INITIAL_PROMPT } from 'constants/index';
 
 export const Chat = () => {
-  const [messages, setMessages] = useState([{ role: 'system', content: INITIAL_PROMPT }]);
+  const [messages, setMessages] = useState([{ role: 'system', content: "INITIAL_PROMPT" }]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
 

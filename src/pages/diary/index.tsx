@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import dayjs from "dayjs";
-import Calendar from "components/Calendar";
+import Calendar, { type Summary } from "components/Calendar";
 import { FileText } from "lucide-react";
 import { mindumpApi } from "api/mindumpApi";
 import { useUser } from "contexts/UserContext";
@@ -11,8 +11,8 @@ import { getEffectiveEntryDate, remainingHours } from "functions/date";
 export default function DiaryPage() {
   const { user } = useUser();
   const [isoString, setIsoString] = useState(getEffectiveEntryDate());
-  const [summaries, setSummaries] = useState([]);
-  const [summary, setSummary] = useState();
+  const [summaries, setSummaries] = useState<Summary[]>([]);
+  const [summary, setSummary] = useState<Summary | null>();
   const [entry, setEntry] = useState<DailyEvent | null>();
   const [messages, setMessages] = useState<any[]>([]);
   const navigate = useNavigate();
