@@ -40,8 +40,12 @@ export function VoiceInput({ onSend }: { onSend: (text: string) => void }) {
 
   return (
     <div>
-      <button onClick={startListening} disabled={listening}>
-        {listening ? "🎙️ Escuchando..." : "🎤 Hablar"}
+      <button
+        onClick={startListening}
+        disabled={listening}
+        className="w-12 h-12 rounded-full bg-white border border-gray-300 shadow-sm flex items-center justify-center text-xl hover:bg-gray-50 disabled:opacity-50 transition"
+      >
+        {listening ? "🎙️" : "🎤"}
       </button>
     </div>
   );

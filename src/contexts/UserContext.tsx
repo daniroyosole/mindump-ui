@@ -1,18 +1,18 @@
-import { getFromCookies, saveToCookies } from 'functions/cookies';
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
+import dayjs from 'dayjs';
+import "dayjs/locale/es"; // importa el locale deseado
+import { mindumpApi } from 'api/mindumpApi';
 
 export interface User {
-  name: string;
-  shortName: string;
-  pronouns: string;
-  isFirstInteraction: boolean;
+  name?: string;
+  user_uuid?: string;
+  timezone?: string;
 }
 
 interface UserContextType {
   user: User;
   updateUser: (updates: Partial<User>) => void;
-  setFirstInteractionComplete: () => void;
 }
 
 const UserContext = createContext<UserContextType | undefined>(undefined);
@@ -30,39 +30,32 @@ interface UserProviderProps {
 }
 
 export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
-  const [user, setUser] = useState<User>({
-    name: '',
-    shortName: '',
-    pronouns: '',
-    isFirstInteraction: true,
-  });
+  const [user, setUser] = useState<User>({});
 
   useEffect(() => {
-    const cookiesUser = getFromCookies("mindump-user")
-    if (cookiesUser) {
-      const savedUser = JSON.parse(cookiesUser)
-      if (savedUser) {
-        setUser(savedUser)
-      }
-    }
+    dayjs.locale("es");
   }, [])
 
   const updateUser = (updates: Partial<User>) => {
     setUser(prev => ({ ...prev, ...updates }));
   };
 
-  const setFirstInteractionComplete = () => {
-    setUser(prev => ({ ...prev, isFirstInteraction: false }));
-  };
-
   useEffect(() => {
-    if (user) {
-      saveToCookies("mindump-user", JSON.stringify(user))
+    if (user && user.user_uuid) {
+      mindumpApi.getUser(user.user_uuid).then((response) => {
+        if (response) {
+          updateUser(response)
+        } else {
+          mindumpApi.saveUser(user).then((response) => {
+            console.log(response)
+          })
+        }
+      })
     }
   }, [user])
 
   return (
-    <UserContext.Provider value={{ user, updateUser, setFirstInteractionComplete }}>
+    <UserContext.Provider value={{ user, updateUser }}>
       {children}
     </UserContext.Provider>
   );
