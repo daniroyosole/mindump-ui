@@ -1,7 +1,7 @@
 import axios from "axios";
 import type { User } from "contexts/UserContext";
 
-const API_BASE = import.meta.env.VERCEL_MINDUMP_API_BASE;
+const API_BASE = import.meta.env.VITE_MINDUMP_API_BASE;
 // API Methods
 export const mindumpApi = {
   // Autenticación con Google
