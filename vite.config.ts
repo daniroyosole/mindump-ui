@@ -6,11 +6,12 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      'pages': '/src/pages',
       'api': '/src/api',
+      'components': '/src/components',
       'constants': '/src/constants',
       'contexts': '/src/contexts',
       'functions': '/src/functions',
+      'pages': '/src/pages',
     },
   },
 })

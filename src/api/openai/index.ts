@@ -24,4 +24,5 @@ export const sendMessage = async (messages: any[]) => {
 export type Message = {
   role: "user" | "assistant" | "system";
   content: string;
+  created_at?: number;
 }
